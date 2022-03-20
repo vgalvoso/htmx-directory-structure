@@ -71,3 +71,10 @@ function template($template,$data = null){
         extract($data);
     include "../template/$template.php";
 }
+
+function api($template,$data = null){
+    global $sql;
+    if($data != null)
+        extract($data);
+    include "$template.php";
+}

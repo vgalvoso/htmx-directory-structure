@@ -11,17 +11,15 @@
     $params = ["username" => $username,"password" => $password];
     $user = $sql->getItem($query,$params);
     if(!$user):
-        $data = ["name"=>"Van Hudson"];
-        template("login",$data);
+        template("login");
 ?>
         <script>
             alert("Login Failed!");
         </script>
 <?php
     else:
+        api("home");
 ?>        
-        <h1><?= $user->id ?></h1>
-        <script src="js/try.js"></script>
 <?php
     endif;
 ?>

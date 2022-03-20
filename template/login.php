@@ -1,8 +1,3 @@
-<?php
-  if(isset($name)){
-    echo $name;
-  }
-?>
 <form>
   <input type="text" name="username" id="">
   <input type="text" name="password" id="">
