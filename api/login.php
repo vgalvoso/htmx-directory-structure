@@ -11,7 +11,7 @@
     $params = ["username" => $username,"password" => $password];
     $user = $sql->getItem($query,$params);
     if(!$user):
-        template("login");
+        view("login");
 ?>
         <script>
             alert("Login Failed!");
@@ -19,7 +19,4 @@
 <?php
     else:
         api("home");
-?>        
-<?php
     endif;
-?>

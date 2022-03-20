@@ -5,4 +5,4 @@
       exit("Home");
 
     $data = ["employees" => $employees];
-    template("home",$data);
+    view("home",$data);

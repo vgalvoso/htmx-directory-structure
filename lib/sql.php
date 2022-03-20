@@ -66,10 +66,10 @@ class Sql{
     } 
 }
 
-function template($template,$data = null){
+function view($template,$data = null){
     if($data != null)
         extract($data);
-    include "../template/$template.php";
+    include "../view/$template.php";
 }
 
 function api($template,$data = null){
