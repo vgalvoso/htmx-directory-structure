@@ -7,8 +7,18 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Document</title>
   <script src="js/htmx.js"></script>
+  <script src="js/vanscript.js"></script>
 </head>
 <body>
-  <?php include "view/login.php"; ?>
+  <?php    
+    session_start();
+    require_once "lib/sql.php";
+    $sql = new Sql();
+    if($path != ""){
+      api($path);
+    }else{
+      api("login");
+    }
+  ?>
 </body>
 </html>

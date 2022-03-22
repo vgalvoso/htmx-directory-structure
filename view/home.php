@@ -1,29 +1,20 @@
-<div class="center full-screen">
-  <table>
-    <thead>
-      <tr>
-        <th>First Name</th>
-        <th>Middle Name</th>
-        <th>Last Name</th>
-        <th>Salary</th>
-        <th>Employment Type</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-        foreach($employees as $employee):
-          $employee = (object)$employee;
-      ?>
-        <tr>
-          <td><?= $employee->first_name ?></td>
-          <td><?= $employee->middle_name ?></td>
-          <td><?= $employee->last_name ?></td>
-          <td><?= $employee->salary ?></td>
-          <td><?= $employee->employment_type ?></td>
-        </tr>
-      <?php
-        endforeach;
-      ?>
-    </tbody>
-  </table>
+<nav>
+  <a href="home" class="nav-logo">
+    <img src="res/logo.png" alt="Logo">
+  </a>
+  <a hx-post="logout" hx-target="body">
+    <button>Logout</button>
+  </a>
+</nav>
+<div class="center pad-big column">
+    <?= api("getEmployees") ?>
+  <form hx-post="addEmployee" hx-target="#employees_tbl" hx-swap="outerHTML">
+    <h2>Add Employee</h2>
+    <input type="text" name="first_name" placeholder="First Name" required>
+    <input type="text" name="middle_name" placeholder="Middle Name">
+    <input type="text" name="last_name" placeholder="Last Name" requirerd>
+    <input type="text" name="salary" placeholder="Salary">
+    <input type="text" name="emp_type" placeholder="Employee Type">
+    <input type="submit" value="Save">
+  </form>
 </div>

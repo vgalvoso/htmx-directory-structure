@@ -1,9 +1,11 @@
 <?php
-    include "../lib/sql.php";
-    $sql = new Sql();
+    if(isset($_SESSION["id"])){
+        header("Location: home");
+        exit();  
+    }
     if(!isset($_POST["username"])){
-        $output = ["result"=>false,"message"=>"Incorrect credentials!"];
-        exit(json_encode($output));
+        view("login");
+        exit();
     }
     $username = $_POST["username"];
     $password = md5($_POST["password"]);
@@ -12,11 +14,7 @@
     $user = $sql->getItem($query,$params);
     if(!$user):
         view("login");
-?>
-        <script>
-            alert("Login Failed!");
-        </script>
-<?php
     else:
+        $_SESSION["id"] = $user->id;
         api("home");
     endif;

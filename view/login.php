@@ -1,7 +1,5 @@
-<form>
-  <input type="text" name="username" id="">
-  <input type="text" name="password" id="">
-  <div hx-confirm="Are you sure?">
-    <button hx-post="api/login.php" hx-target="body" hx-swap="innerHTML">Login</button>
-  </div>
+<form hx-post="login" hx-target="body" hx-swap="innerHTML">
+  <input type="text" name="username" id="" required>
+  <input type="text" name="password" id="" required>
+  <button>Login</button>
 </form>
