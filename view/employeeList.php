@@ -24,7 +24,7 @@
           <td><?= $employee->salary ?></td>
           <td><?= $employee->employment_type ?></td>
           <td>
-            <form hx-post="deleteEmployee" 
+            <form hx-post="ManageEmployee/deleteEmployee" 
               hx-target="#employees_tbl" 
               hx-confirm="Confirm Delete"
               hx-swap="outerHTML">

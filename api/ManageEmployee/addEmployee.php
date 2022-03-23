@@ -11,7 +11,7 @@
   $params = ["first_name" => $first_name,"middle_name" => $middle_name,"last_name" => $last_name,
             "salary" => $salary,"employment_type" => $emp_type];
   if($sql->exec($query,$params)){
-    api("getEmployees");
+    api("ManageEmployee/getEmployees");
   }else{
     $data = ["error" => $sql->getError()];
     view("error",$data);

@@ -7,8 +7,8 @@
   </a>
 </nav>
 <div class="center pad-big column">
-    <?= api("getEmployees") ?>
-  <form hx-post="addEmployee" hx-target="#employees_tbl" hx-swap="outerHTML">
+    <?= api("ManageEmployee/getEmployees") ?>
+  <form hx-post="ManageEmployee/addEmployee" hx-target="#employees_tbl" hx-swap="outerHTML">
     <h2>Add Employee</h2>
     <input type="text" name="first_name" placeholder="First Name" required>
     <input type="text" name="middle_name" placeholder="Middle Name">

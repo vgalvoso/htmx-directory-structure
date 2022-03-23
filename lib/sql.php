@@ -127,7 +127,16 @@ $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http
 "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $path = parse_url($url, PHP_URL_PATH);
 //remove string from last "/" to first character
-$path = trim(ltrim(strrchr($path,"/"),"/"));
+$path = trim(ltrim(strchr($path,"/"),"/"));
+$path = ltrim(substr($path,strposX($path,"/",1)),"/");
+
+function strposX($haystack, $needle, $number = 0)
+{
+    return strpos($haystack, $needle,
+        $number > 1 ?
+        strposX($haystack, $needle, $number - 1) + strlen($needle) : 0
+    );
+}
 
 function view($template,$data = null,$push_url = true){
     if(!file_exists("view/$template.php"))
