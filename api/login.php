@@ -14,7 +14,7 @@
     $user = $sql->getItem($query,$params);
     if(!$user):
         view("login");
-    else:
-        $_SESSION["id"] = $user->id;
-        api("home");
+        exit();
     endif;
+    $_SESSION["id"] = $user->id;
+    api("home");

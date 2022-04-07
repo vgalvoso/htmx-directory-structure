@@ -1,4 +1,4 @@
-<table id="employees_tbl">
+<table id="employees_tbl" class="mobile-show border-0">
     <caption>
       <input type="text" placeholder="Search" onkeyup="filterTable(this,'employees_body')">
     </caption>

@@ -1,20 +1,69 @@
-<nav>
+  <div class="narrow column mobile-show">
+  <nav class="">
   <a href="home" class="nav-logo">
-    <img src="res/logo.png" alt="Logo">
+    <img src="https://www.kfc.com.ph/Content/OnlineOrderingImages/Shared/logo.svg" alt="Logo">
   </a>
   <a hx-post="logout" hx-target="body">
-    <button>Logout</button>
+    <button class="bg-white default-color bold">Sign in</button>
   </a>
 </nav>
-<div class="center pad-big column">
-    <?= api("ManageEmployee/getEmployees") ?>
-  <form hx-post="ManageEmployee/addEmployee" hx-target="#employees_tbl" hx-swap="outerHTML">
-    <h2>Add Employee</h2>
-    <input type="text" name="first_name" placeholder="First Name" required>
-    <input type="text" name="middle_name" placeholder="Middle Name">
-    <input type="text" name="last_name" placeholder="Last Name" requirerd>
-    <input type="text" name="salary" placeholder="Salary">
-    <input type="text" name="emp_type" placeholder="Employee Type">
-    <input type="submit" value="Save">
-  </form>
+<div class="w-100">
+  <div class="">
+    <button class="w-50 bold bg-black">MENU</button>
+    <button class="white bg-red w-50 bold">DEALS</button>
+  </div>
+  <div class="right bg-red white pad-small w-100">
+    <button class="bg-white default-color round bold mr-2 mobile-hide">START MY ORDER</button>
+    <div class="center ml-2">
+      <i class="gg-shopping-cart bold text-subheader mr-1"></i>
+      <label for="" class="bold text-subheader">&#8369; 0.00</label>
+    </div>
+  </div>
+</div>
+<div class="mobile-show none center">
+  <button class="bg-red white bold mar-big w-80">START MY ORDER</button>
+</div>
+<div class="w-100 border-bot spread scroll-x">
+  <div class="column center">
+    <a class="cat1 w-100 h-100 border-red border-2 circle"></a>
+    What's Hot
+  </div>
+  <div class="column center">
+    <a class="cat2 w-100 h-100 border-red border-2 circle"></a>
+    Bucket Meals
+  </div>
+  <div class="column center">
+    <a class="cat1 w-100 h-100 border-red border-2 circle"></a>
+    What's Hot
+  </div>
+  <div class="column center">
+    <a class="cat1 w-100 h-100 border-red border-2 circle"></a>
+    What's Hot
+  </div>
+  <div class="column center">
+    <a class="cat1 w-100 h-100 border-red border-2 circle"></a>
+    What's Hot
+  </div>
+  <div class="column center">
+    <a class="cat1 w-100 h-100 border-red border-2 circle"></a>
+    What's Hot
+  </div>
+  <div class="column center">
+    <a class="cat1 w-100 h-100 border-red border-2 circle"></a>
+    What's Hot
+  </div>
+  <div class="column center">
+    <a class="cat1 w-100 h-100 border-red border-2 circle"></a>
+    What's Hot
+  </div>
+  <div class="column center">
+    <a class="cat1 w-100 h-100 border-red border-2 circle"></a>
+    What's Hot
+  </div>
+  <div class="column center">
+    <a class="cat1 w-100 h-100 border-red border-2 circle"></a>
+    What's Hot
+  </div>
+</div>
+
 </div>

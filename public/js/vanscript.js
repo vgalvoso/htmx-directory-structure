@@ -48,3 +48,13 @@ const filterTable = (input,tableId) => {
 }
 //onfirmation
 const confirmation = message => confirm(message)
+//toggle password input
+const showPassword = sel => {
+  let input = getElement(sel)
+  let type = input.getAttribute("type")
+  if(type == "text"){
+    input.setAttribute("type","password")
+    return
+  }    
+  input.setAttribute("type","text")
+}

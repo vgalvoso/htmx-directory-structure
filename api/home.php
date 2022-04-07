@@ -1,3 +1,2 @@
 <?php
-  redirect();
   view("home");
